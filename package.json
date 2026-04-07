@@ -24,5 +24,10 @@
     "eslint-config-next": "16.2.1",
     "msw": "^2.12.14",
     "typescript": "^5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
