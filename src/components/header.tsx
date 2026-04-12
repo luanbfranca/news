@@ -2,10 +2,11 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 
 import IconButton from '@mui/material/IconButton';
-// import AccountCircle from '@mui/icons-material/AccountCircle';
+import Search from '@mui/icons-material/Search';
+import PersonOutline from '@mui/icons-material/PersonOutline';
 
 export default function Header() {
   return (
@@ -15,7 +16,7 @@ export default function Header() {
                 <Typography sx={{ flexGrow: 1 }}>
                     PORTAL <span className="highlight">NOTÍCIAS</span>
                 </Typography>
-                <Box sx={{'& .MuiButton-root': { textTransform: 'none',}}}>
+                <Stack direction="row" spacing={1} sx={{'& .MuiButton-root': { textTransform: 'none',}}}>
                     <Button color="inherit">Home</Button>
                     <Button color="inherit">Notícias</Button>
                     <Button color="inherit">FAQ</Button>
@@ -28,12 +29,12 @@ export default function Header() {
                     <Button color="inherit">Esportes</Button>
                     <Button color="inherit">Viagem & <br />Gastronomia</Button>
                     <IconButton size="large" color="inherit">
-                        search
+                        <Search />
                     </IconButton>
                     <IconButton size="large" color="inherit">
-                        person
+                        <PersonOutline />
                     </IconButton>
-                </Box>
+                </Stack>
             </Toolbar>
         </AppBar>
         <Toolbar />
