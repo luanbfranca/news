@@ -47,3 +47,11 @@ a {
     color-scheme: dark;
   }
 }
+
+.highlight {
+  color: #c41e3a;
+}
+
+.preserve-space {
+  white-space: pre;
+}
