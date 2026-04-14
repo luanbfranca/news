@@ -1,5 +1,6 @@
 'use client'
 
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -33,6 +34,7 @@ export default function HomePage() {
       Natus hic, placeat inventore obcaecati libero repudiandae possimus eaque sed aspernatur quod, suscipit recusandae doloribus quis nostrum quaerat sit blanditiis soluta praesentium corrupti? Enim eligendi perspiciatis, quas et quod numquam.
       Officiis, similique? In autem ducimus voluptatem nesciunt aliquam, magni magnam a quisquam rem atque molestias quas et distinctio quo voluptatibus? Qui fugit odit vel magnam accusantium quaerat nisi ex adipisci.
       Rem animi vel perferendis, esse, iusto facilis deserunt quis ratione, doloribus veritatis aliquam! Sequi et vel pariatur obcaecati non harum sapiente laborum quae totam nesciunt distinctio facilis praesentium, dolore iusto.</div>;
+      <Footer />
     </ThemeProvider>
   )
 }
