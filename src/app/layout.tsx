@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { StartMockWorker } from '@/mocks/mockServer';
 
+import Footer from '@/components/footer';
+import Header from '@/components/header';
+import ThemeWrapper from '@/components/themeWrapper';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +31,11 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         <StartMockWorker>
-          {children}
+          <ThemeWrapper>
+            <Header/>
+            {children}
+            <Footer />
+          </ThemeWrapper>
         </StartMockWorker>
       </body>
     </html>
