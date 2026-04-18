@@ -1,3 +1,5 @@
+'use client'
+
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -13,6 +15,7 @@ import Menu from '@mui/icons-material/Menu';
 
 import { useIsMobile } from '@/utils/useIsMobile';
 import { useState } from 'react';
+import NextLink from '@/components/link';
 
 export default function Header() {
 
@@ -29,17 +32,17 @@ export default function Header() {
 
     const navButtons = (
         <>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">Notícias</Button>
-            <Button color="inherit">FAQ</Button>
-            <Button color="inherit">Contato</Button>
-            <Button color="inherit"><LiveTv/> Ao vivo</Button>
-            <Button color="inherit">Política</Button>
-            <Button color="inherit">Money</Button>
-            <Button color="inherit">Mundo</Button>
-            <Button color="inherit">Agro</Button>
-            <Button color="inherit">Esportes</Button>
-            <Button color="inherit">Viagem & <br />Gastronomia</Button>
+            <Button href="/home" component={NextLink} color="inherit">Home</Button>
+            <Button href="/noticias" component={NextLink} color="inherit">Notícias</Button>
+            <Button href="/faq" component={NextLink} color="inherit">FAQ</Button>
+            <Button href="/contatos" component={NextLink} color="inherit">Contato</Button>
+            <Button href="" component={NextLink} color="inherit"><LiveTv/> Ao vivo</Button>
+            <Button href="" component={NextLink} color="inherit">Política</Button>
+            <Button href="" component={NextLink} color="inherit">Money</Button>
+            <Button href="" component={NextLink} color="inherit">Mundo</Button>
+            <Button href="" component={NextLink} color="inherit">Agro</Button>
+            <Button href="" component={NextLink} color="inherit">Esportes</Button>
+            <Button href="" component={NextLink} color="inherit">Viagem & <br />Gastronomia</Button>
         </>
     )
 
@@ -68,7 +71,7 @@ export default function Header() {
                                     <IconButton size="large" color="inherit" onClick={handleDrawerOpen}>
                                         <Menu />
                                     </IconButton>
-                                    <Drawer open={openDrawer} onClose={handleDrawerClose}>
+                                    <Drawer open={openDrawer} onClose={handleDrawerClose} onClick={handleDrawerClose}>
                                         <Stack spacing={2} className="preserve-space" sx={{ width: 250 }}>
                                             <br />
                                             { navButtons }
