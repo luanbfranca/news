@@ -7,6 +7,9 @@ const defaultTheme = createTheme({
             main: '#0a0a0a',
         },
     },
+    typography: {
+        fontSize: 12,
+    }
 });
 
 export default function ThemeWrapper({

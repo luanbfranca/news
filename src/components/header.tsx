@@ -15,12 +15,15 @@ import Menu from '@mui/icons-material/Menu';
 
 import { useIsMobile } from '@/utils/useIsMobile';
 import { useState } from 'react';
+import { usePathname } from "next/navigation";
 import NextLink from '@/components/link';
 
 export default function Header() {
 
     const isMobile = useIsMobile(1080);
     const [openDrawer, setOpenDrawer] = useState(false);
+
+    const pathName = usePathname();
 
     const handleDrawerOpen = () => {
         setOpenDrawer(true);
@@ -32,10 +35,10 @@ export default function Header() {
 
     const navButtons = (
         <>
-            <Button href="/home" component={NextLink} color="inherit">Home</Button>
-            <Button href="/noticias" component={NextLink} color="inherit">Notícias</Button>
-            <Button href="/faq" component={NextLink} color="inherit">FAQ</Button>
-            <Button href="/contatos" component={NextLink} color="inherit">Contato</Button>
+            <Button href="/home" component={NextLink} color="inherit" sx={pathName === "/home" ? {fontWeight: 'bold'} : null}>Home</Button>
+            <Button href="/noticias" component={NextLink} color="inherit" sx={pathName === "/noticias" ? {fontWeight: 'bold'} : null}>Notícias</Button>
+            <Button href="/faq" component={NextLink} color="inherit" sx={pathName === "/faq" ? {fontWeight: 'bold'} : null}>FAQ</Button>
+            <Button href="/contatos" component={NextLink} color="inherit" sx={pathName === "/contatos" ? {fontWeight: 'bold'} : null}>Contato</Button>
             <Button href="" component={NextLink} color="inherit"><LiveTv/> Ao vivo</Button>
             <Button href="" component={NextLink} color="inherit">Política</Button>
             <Button href="" component={NextLink} color="inherit">Money</Button>
