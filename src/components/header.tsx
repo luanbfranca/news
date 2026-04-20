@@ -53,8 +53,8 @@ export default function Header() {
         <>
             <AppBar position="fixed" color="primary">
                 <Toolbar className="preserve-space">
-                    <Typography sx={{ flexGrow: 1 }}>
-                        PORTAL <span className="highlight">NOTÍCIAS</span>
+                    <Typography sx={{ flexGrow: 1, '& span': { color: 'secondary.main'} }}>
+                        PORTAL <span>NOTÍCIAS</span>
                     </Typography>
                     <Stack direction="row" spacing={1} sx={{'& .MuiButton-root': { textTransform: 'none'}}}>
                         {

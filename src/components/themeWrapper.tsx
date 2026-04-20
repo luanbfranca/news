@@ -6,6 +6,10 @@ const defaultTheme = createTheme({
         primary: {
             main: '#0a0a0a',
         },
+        secondary: {
+            main: '#c41e3a',
+            contrastText: '#e75b6d',
+        },
     },
     typography: {
         fontSize: 12,
