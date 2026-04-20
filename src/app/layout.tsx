@@ -6,6 +6,7 @@ import { StartMockWorker } from '@/mocks/mockServer';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import ThemeWrapper from '@/components/themeWrapper';
+import { Container } from '@mui/material';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,9 @@ export default function RootLayout({
         <StartMockWorker>
           <ThemeWrapper>
             <Header/>
-            {children}
+              <Container className="page-margin" maxWidth={ false } sx={{ maxWidth:'1080px' }}>
+                {children}
+              </Container>
             <Footer />
           </ThemeWrapper>
         </StartMockWorker>
