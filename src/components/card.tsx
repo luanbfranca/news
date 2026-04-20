@@ -14,7 +14,7 @@ export default function Card({
 } : Noticia, fullMode = true, contrast = true) {
     const content = <CardContent className={ contrast ? 'card-contrast' : '' } sx={{ width: "100%" }}>
         <Typography gutterBottom component="div"
-            sx={{ fontWeight: 'bold', textTransform: fullMode ? 'uppercase' : 'none', color: contrast ? 'secondary.contrastText' : 'secondary.main' }}>
+            sx={{ fontWeight: 'bold', textTransform: fullMode ? 'uppercase' : 'none', color: contrast ? 'secondary.light' : 'secondary.main' }}>
             { category }
         </Typography>
         <Typography gutterBottom variant="h6" component="div" sx={{ fontWeight: 'bold', color: contrast ? 'primary.contrastText' : null }}>
@@ -28,7 +28,7 @@ export default function Card({
         </Typography>
     </CardContent>
     return (
-        <CardMUI>
+        <CardMUI sx={{borderRadius: '8px'}}>
             <CardMedia
                 sx={{ height: fullMode ? 420 : 200 }}
                 image={ imageUrl }

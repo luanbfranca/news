@@ -8,7 +8,7 @@ const defaultTheme = createTheme({
         },
         secondary: {
             main: '#c41e3a',
-            contrastText: '#e75b6d',
+            light: '#e75b6d',
         },
     },
     typography: {
