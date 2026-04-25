@@ -2,12 +2,14 @@
 
 import { Noticia } from '@/models/noticia';
 import { getNoticia } from '@/services/news.service';
+import { useIsMobile } from '@/utils/useIsMobile';
 import { CardMedia, Typography } from '@mui/material';
 import CardMUI from '@mui/material/Card';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function NoticiaPage() {
+    const isMobile = useIsMobile(640);
     const params = useParams<{titulo: string}>();
     const [noticia, setNoticia] = useState<Noticia>();
 
@@ -27,7 +29,7 @@ export default function NoticiaPage() {
         </Typography>
         <CardMUI sx={{borderRadius: '8px', height: '100%', mb: 3}}>
             <CardMedia
-                sx={{ height: 400 }}
+                sx={{ height: isMobile ? 200 : 400 }}
                 image={ noticia?.imageUrl }
                 title={ noticia?.imageAlt }
             >
