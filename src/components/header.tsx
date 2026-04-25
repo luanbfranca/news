@@ -45,7 +45,7 @@ export default function Header() {
             <Button href="" component={NextLink} color="inherit">Mundo</Button>
             <Button href="" component={NextLink} color="inherit">Agro</Button>
             <Button href="" component={NextLink} color="inherit">Esportes</Button>
-            <Button href="" component={NextLink} color="inherit">Viagem & <br />Gastronomia</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{textAlign: 'center'}}>Viagem & <br />Gastronomia</Button>
         </>
     )
 
