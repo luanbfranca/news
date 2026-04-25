@@ -20,7 +20,7 @@ export default function Footer() {
                             <Link href="/home" component={NextLink} variant="body2" underline="hover" color="inherit">Home</Link>
                             <Link href="/noticias" component={NextLink} variant="body2" underline="hover" color="inherit">Notícias</Link>
                             <Link href="/faq" component={NextLink} variant="body2" underline="hover" color="inherit">FAQ</Link>
-                            <Link href="/contatos" component={NextLink} variant="body2" underline="hover" color="inherit">Contato</Link>
+                            <Link href="/contato" component={NextLink} variant="body2" underline="hover" color="inherit">Contato</Link>
                         </Stack>
                     </Stack>
                 </Container>

@@ -38,7 +38,7 @@ export default function Header() {
             <Button href="/home" component={NextLink} color="inherit" sx={pathName === "/home" ? {fontWeight: 'bold'} : null}>Home</Button>
             <Button href="/noticias" component={NextLink} color="inherit" sx={pathName === "/noticias" ? {fontWeight: 'bold'} : null}>Notícias</Button>
             <Button href="/faq" component={NextLink} color="inherit" sx={pathName === "/faq" ? {fontWeight: 'bold'} : null}>FAQ</Button>
-            <Button href="/contatos" component={NextLink} color="inherit" sx={pathName === "/contatos" ? {fontWeight: 'bold'} : null}>Contato</Button>
+            <Button href="/contato" component={NextLink} color="inherit" sx={pathName === "/contato" ? {fontWeight: 'bold'} : null}>Contato</Button>
             <Button href="" component={NextLink} color="inherit"><LiveTv/> Ao vivo</Button>
             <Button href="" component={NextLink} color="inherit">Política</Button>
             <Button href="" component={NextLink} color="inherit">Money</Button>
