@@ -10,7 +10,7 @@ export async function getNoticias(): Promise<Noticia[]> {
 export async function getNoticia(slug: string): Promise<Noticia> {
     const response = await fetch('https://api.news.com/noticias');
     const jsonRes = await response.json();
-    return jsonRes.filter((noticia: string) => noticia === slug);
+    return jsonRes.find((noticia: Noticia) => noticia.slug === slug);
 }
 
 export async function getFiltro() {
