@@ -2,17 +2,16 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, useMediaQuery } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import Card from '@/components/card';
 import { getFiltro, getNoticias } from '@/services/news.service';
-import { useIsMobile } from '@/utils/useIsMobile';
 import { Noticia } from '@/models/noticia';
 
 export default function NoticiasPage() {
 
-    const isMobile = useIsMobile(640);
+    const isMobile = useMediaQuery('(max-width:640px)');
 
     const [category, setCategory] = useState<string>();
 

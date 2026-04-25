@@ -2,14 +2,13 @@
 
 import { Noticia } from '@/models/noticia';
 import { getNoticia } from '@/services/news.service';
-import { useIsMobile } from '@/utils/useIsMobile';
-import { CardMedia, Typography } from '@mui/material';
+import { CardMedia, Typography, useMediaQuery } from '@mui/material';
 import CardMUI from '@mui/material/Card';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function NoticiaPage() {
-    const isMobile = useIsMobile(640);
+    const isMobile = useMediaQuery('(max-width:640px)');
     const params = useParams<{titulo: string}>();
     const [noticia, setNoticia] = useState<Noticia>();
 

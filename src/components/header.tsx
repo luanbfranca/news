@@ -13,15 +13,15 @@ import PersonOutline from '@mui/icons-material/PersonOutline';
 import LiveTv from '@mui/icons-material/LiveTv';
 import Menu from '@mui/icons-material/Menu';
 
-import { useIsMobile } from '@/utils/useIsMobile';
 import { useState } from 'react';
 import { usePathname } from "next/navigation";
 import NextLink from '@/components/link';
 import Destaque from './destaque';
+import { useMediaQuery } from '@mui/material';
 
 export default function Header() {
 
-    const isMobile = useIsMobile(1080);
+    const isMobile = useMediaQuery('(max-width:1080px)');
     const [openDrawer, setOpenDrawer] = useState(false);
 
     const pathName = usePathname();
