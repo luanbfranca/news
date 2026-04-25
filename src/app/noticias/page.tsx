@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 import { Grid, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -67,7 +68,11 @@ export default function NoticiasPage() {
                 noticias.filter(noticia => {
                     return !category || noticia.category === category;
                 }).map((noticia, i) => {
-                    return <Grid size={isMobile ? 12 : 4} key={i}><Card {...noticia}/></Grid>
+                    return <Grid size={isMobile ? 12 : 4} key={i}>
+                        <Link href={`/noticias/${noticia.slug}`}>
+                            <Card {...noticia}/>
+                        </Link>
+                    </Grid>
                 })
             }
         </Grid>
