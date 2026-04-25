@@ -1,4 +1,4 @@
-import { Noticia } from '@/models/noticias';
+import { Noticia } from '@/models/noticia';
 import { Stack, Typography } from '@mui/material';
 import CardMUI from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
