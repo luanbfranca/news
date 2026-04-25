@@ -34,9 +34,9 @@ export default function RootLayout({
         <StartMockWorker>
           <ThemeWrapper>
             <Header/>
-              <Container className="page-margin" maxWidth={ false } sx={{ maxWidth:'1080px' }}>
-                {children}
-              </Container>
+            <Container className="page-margin" maxWidth={ false } sx={{ maxWidth:'1080px' }}>
+              {children}
+            </Container>
             <Footer />
           </ThemeWrapper>
         </StartMockWorker>

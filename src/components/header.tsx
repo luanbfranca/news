@@ -17,6 +17,7 @@ import { useIsMobile } from '@/utils/useIsMobile';
 import { useState } from 'react';
 import { usePathname } from "next/navigation";
 import NextLink from '@/components/link';
+import Destaque from './destaque';
 
 export default function Header() {
 
@@ -51,42 +52,46 @@ export default function Header() {
 
     return (
         <>
-            <AppBar position="fixed" color="primary">
-                <Toolbar className="preserve-space">
-                    <Typography sx={{ flexGrow: 1, '& span': { color: 'secondary.main'} }}>
-                        PORTAL <span>NOTÍCIAS</span>
-                    </Typography>
-                    <Stack direction="row" spacing={1} sx={{'& .MuiButton-root': { textTransform: 'none'}}}>
-                        {
-                            isMobile ? null : (
-                                navButtons
-                            )
-                        }
-                        <IconButton size="large" color="inherit">
-                            <Search />
-                        </IconButton>
-                        <IconButton size="large" color="inherit">
-                            <PersonOutline />
-                        </IconButton>
-                        {
-                            isMobile ? (
-                                <>
-                                    <IconButton size="large" color="inherit" onClick={handleDrawerOpen}>
-                                        <Menu />
-                                    </IconButton>
-                                    <Drawer open={openDrawer} onClose={handleDrawerClose} onClick={handleDrawerClose}>
-                                        <Stack spacing={2} className="preserve-space" sx={{ width: 250 }}>
-                                            <br />
-                                            { navButtons }
-                                        </Stack>
-                                    </Drawer>
-                                </>
-                            ) : null
-                        }
-                    </Stack>
-                </Toolbar>
-            </AppBar>
-            <Toolbar />
+            <div className="sticky-header">
+                <AppBar color="primary" position="relative">
+                    <Toolbar className="preserve-space">
+                        <Typography sx={{ flexGrow: 1, '& span': { color: 'secondary.main'} }}>
+                            PORTAL <span>NOTÍCIAS</span>
+                        </Typography>
+                        <Stack direction="row" spacing={1} sx={{'& .MuiButton-root': { textTransform: 'none'}}}>
+                            {
+                                isMobile ? null : (
+                                    navButtons
+                                )
+                            }
+                            <IconButton size="large" color="inherit">
+                                <Search />
+                            </IconButton>
+                            <IconButton size="large" color="inherit">
+                                <PersonOutline />
+                            </IconButton>
+                            {
+                                isMobile ? (
+                                    <>
+                                        <IconButton size="large" color="inherit" onClick={handleDrawerOpen}>
+                                            <Menu />
+                                        </IconButton>
+                                        <Drawer open={openDrawer} onClose={handleDrawerClose} onClick={handleDrawerClose}>
+                                            <Stack spacing={2} className="preserve-space" sx={{ width: 250 }}>
+                                                <br />
+                                                { navButtons }
+                                            </Stack>
+                                        </Drawer>
+                                    </>
+                                ) : null
+                            }
+                        </Stack>
+                    </Toolbar>
+                </AppBar>
+                {
+                    isMobile ? null : <Destaque/>
+                }
+            </div>
         </>
     );
 }
