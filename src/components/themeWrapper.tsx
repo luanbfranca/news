@@ -12,7 +12,8 @@ const defaultTheme = createTheme({
         },
     },
     typography: {
-        fontSize: 12,
+        fontSize: 14,
+        // fontWeightRegular: 500
     }
 });
 

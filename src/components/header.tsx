@@ -36,24 +36,24 @@ export default function Header() {
 
     const navButtons = (
         <>
-            <Button href="/home" component={NextLink} color="inherit" sx={pathName === "/home" ? {fontWeight: 'bold'} : null}>Home</Button>
-            <Button href="/noticias" component={NextLink} color="inherit" sx={pathName === "/noticias" ? {fontWeight: 'bold'} : null}>Notícias</Button>
-            <Button href="/faq" component={NextLink} color="inherit" sx={pathName === "/faq" ? {fontWeight: 'bold'} : null}>FAQ</Button>
-            <Button href="/contato" component={NextLink} color="inherit" sx={pathName === "/contato" ? {fontWeight: 'bold'} : null}>Contato</Button>
-            <Button href="" component={NextLink} color="inherit"><LiveTv/> Ao vivo</Button>
-            <Button href="" component={NextLink} color="inherit">Política</Button>
-            <Button href="" component={NextLink} color="inherit">Money</Button>
-            <Button href="" component={NextLink} color="inherit">Mundo</Button>
-            <Button href="" component={NextLink} color="inherit">Agro</Button>
-            <Button href="" component={NextLink} color="inherit">Esportes</Button>
-            <Button href="" component={NextLink} color="inherit" sx={{textAlign: 'center'}}>Viagem & <br />Gastronomia</Button>
+            <Button href="/home" component={NextLink} color="inherit" sx={pathName === "/home" ? {fontWeight: 'bold'} : {fontWeight: 'light'}}>Home</Button>
+            <Button href="/noticias" component={NextLink} color="inherit" sx={pathName === "/noticias" ? {fontWeight: 'bold'} : {fontWeight: 'light'}}>Notícias</Button>
+            <Button href="/faq" component={NextLink} color="inherit" sx={pathName === "/faq" ? {fontWeight: 'bold'} : {fontWeight: 'light'}}>FAQ</Button>
+            <Button href="/contato" component={NextLink} color="inherit" sx={pathName === "/contato" ? {fontWeight: 'bold'} : {fontWeight: 'light'}}>Contato</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}><LiveTv/> Ao vivo</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}>Política</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}>Money</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}>Mundo</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}>Agro</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light'}}>Esportes</Button>
+            <Button href="" component={NextLink} color="inherit" sx={{fontWeight: 'light', textAlign: 'center'}}>Viagem & <br />Gastronomia</Button>
         </>
     )
 
     return (
         <>
             <div className="sticky-header">
-                <AppBar color="primary" position="relative">
+                <AppBar color="primary" position="relative" elevation={0}>
                     <Toolbar className="preserve-space">
                         <Typography sx={{ flexGrow: 1, '& span': { color: 'secondary.main'} }}>
                             PORTAL <span>NOTÍCIAS</span>

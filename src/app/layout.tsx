@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { StartMockWorker } from '@/mocks/mockServer';
 
@@ -8,12 +8,12 @@ import Header from '@/components/header';
 import ThemeWrapper from '@/components/themeWrapper';
 import { Container } from '@mui/material';
 
-const geistSans = Geist({
+const robotoSans = Roboto({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const robotoMono = Roboto_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${robotoSans.variable} ${robotoMono.variable}`}>
       <body>
         <StartMockWorker>
           <ThemeWrapper>
