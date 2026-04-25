@@ -18,7 +18,7 @@ export async function getDestaques(): Promise<string[]> {
     return await response.json();
 }
 
-export async function getFiltro() {
+export async function getFiltro(): Promise<string[]>  {
     const response = await fetch('https://api.news.com/filtro');
     return await response.json();
 }

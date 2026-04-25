@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Card from '@/components/card';
 import { getFiltro, getNoticias } from '@/services/news.service';
 import { useIsMobile } from '@/utils/useIsMobile';
+import { Noticia } from '@/models/noticia';
 
 export default function NoticiasPage() {
 
@@ -15,7 +16,7 @@ export default function NoticiasPage() {
 
     const [category, setCategory] = useState<string>();
 
-    const [filters, setFilters] = useState<any[]>([]);
+    const [filters, setFilters] = useState<string[]>([]);
     useEffect(() => {
         const fetchData = async () => {
             setFilters(await getFiltro());
@@ -23,7 +24,7 @@ export default function NoticiasPage() {
         fetchData();
     }, []);
 
-    const [noticias, setNoticias] = useState<any[]>([]);
+    const [noticias, setNoticias] = useState<Noticia[]>([]);
     useEffect(() => {
         const fetchData = async () => {
             setNoticias(await getNoticias());
