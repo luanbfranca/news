@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+
 import { StartMockWorker } from '@/mocks/mockServer';
 
-import Footer from '@/components/footer';
-import Header from '@/components/header';
-import ThemeWrapper from '@/components/themeWrapper';
 import { Container } from '@mui/material';
+
+import ThemeWrapper from '@/components/themeWrapper';
+import Header from '@/components/header';
+import Breadcrumbs from '@/components/breadcrumbs';
+import Footer from '@/components/footer';
 
 const robotoSans = Roboto({
   variable: "--font-geist-sans",
@@ -35,6 +38,7 @@ export default function RootLayout({
           <ThemeWrapper>
             <Header/>
             <Container className="page-margin" maxWidth={ false } sx={{ maxWidth:'1080px' }}>
+              <Breadcrumbs/>
               {children}
             </Container>
             <Footer />
