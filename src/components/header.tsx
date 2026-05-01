@@ -77,24 +77,24 @@ export default function Header() {
             <div className="sticky-header">
                 <AppBar color="primary" position="relative" elevation={0}>
                     <Toolbar className="preserve-space">
-                        <Typography sx={{ flexGrow: 1, '& span': { color: 'secondary.main' } }}>
+                        <Typography flexGrow={1} sx={{ '& span': { color: 'secondary.main' } }}>
                             PORTAL <span>NOTÍCIAS</span>
                         </Typography>
                         <Stack direction="row" spacing={1} sx={{ '& .MuiButton-root': { textTransform: 'none' } }}>
                             {isMobile ? null : navButtons}
-                            <IconButton size="large" color="inherit">
+                            <IconButton size="large" color="inherit" aria-label="procurar">
                                 <Search />
                             </IconButton>
-                            <IconButton size="large" color="inherit">
+                            <IconButton size="large" color="inherit" aria-label="conta">
                                 <PersonOutline />
                             </IconButton>
                             {isMobile ? (
                                 <>
-                                    <IconButton size="large" color="inherit" onClick={handleDrawerOpen}>
+                                    <IconButton size="large" color="inherit" aria-label="menu" onClick={handleDrawerOpen}>
                                         <Menu />
                                     </IconButton>
                                     <Drawer open={openDrawer} onClose={handleDrawerClose} onClick={handleDrawerClose}>
-                                        <Stack spacing={2} className="preserve-space" sx={{ width: 250 }}>
+                                        <Stack spacing={2} className="preserve-space" width={250}>
                                             <br />
                                             {navButtons}
                                         </Stack>

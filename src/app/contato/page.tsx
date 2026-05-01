@@ -6,13 +6,13 @@ import MessageIcon from '@mui/icons-material/Message';
 export default function ContatoPage() {
     return (
         <>
-            <Typography variant="h5" fontWeight="bold" gutterBottom component="div">
+            <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
                 Contato
             </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div" sx={{ color: 'text.secondary', mb: 2 }}>
+            <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
                 Envie sua mensagem, sugestão ou dúvida. Responderemos o mais breve possível.
             </Typography>
-            <Stack spacing={2} sx={{ maxWidth: 500 }}>
+            <Stack spacing={2} maxWidth={500}>
                 <TextField
                     label="Nome"
                     required

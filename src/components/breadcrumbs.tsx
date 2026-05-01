@@ -36,7 +36,9 @@ export default function Breadcrumbs() {
     return (
         <MUIBreadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }} separator={<NavigateNextIcon fontSize="small" />}>
             {home ? (
-                <Typography sx={{ color: 'text.primary', fontWeight: 'bold' }}>Home</Typography>
+                <Typography color="text.primary" fontWeight={'bold'}>
+                    Home
+                </Typography>
             ) : (
                 <Link component={NextLink} underline="hover" color="inherit" href="/">
                     Home
@@ -47,7 +49,7 @@ export default function Breadcrumbs() {
                 const to = `/${pathnames.slice(0, index + 1).join('/')}`;
                 return last ? (
                     home ? null : (
-                        <Typography key={to} sx={{ color: 'text.primary', fontWeight: 'bold' }}>
+                        <Typography key={to} color="text.primary" fontWeight={'bold'}>
                             {params.titulo ? noticia?.title : breadcrumbNameMap[to]}
                         </Typography>
                     )

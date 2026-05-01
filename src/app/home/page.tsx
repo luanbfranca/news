@@ -42,11 +42,11 @@ export default function HomePage() {
                     <Card fullMode={true} contrast={true} {...noticias[0]} />
                 </Link>
             ) : null}
-            <Grid container spacing={2} sx={{ justifyContent: 'stretch' }} mb={4} mt={4}>
+            <Grid container spacing={2} justifyContent={'stretch'} mb={4} mt={4}>
                 {noticias[1] ? (
                     <Grid size={isMobile ? 12 : 7}>
                         <Link href={`/noticias/${noticias[1].slug}`}>
-                            <Card {...noticias[1]} date="" />z
+                            <Card {...noticias[1]} date="" />
                         </Link>
                     </Grid>
                 ) : null}
@@ -64,7 +64,7 @@ export default function HomePage() {
             <Typography variant="h6" fontWeight="bold" gutterBottom component="h6" color="secondary.main" textTransform="uppercase" mb={2}>
                 Webstories
             </Typography>
-            <Grid container spacing={2} sx={{ justifyContent: 'stretch' }}>
+            <Grid container spacing={2} justifyContent={'stretch'}>
                 {webstories.map((noticia, i) => {
                     return (
                         <Grid size={isMobile ? 6 : 2.3} key={i}>
@@ -95,7 +95,7 @@ export default function HomePage() {
             <Typography variant="h6" fontWeight="bold" gutterBottom component="h6" color="secondary.main" textTransform="uppercase" mb={2} mt={4}>
                 Últimas notícias
             </Typography>
-            <Grid container spacing={3} sx={{ justifyContent: 'stretch' }}>
+            <Grid container spacing={3} justifyContent={'stretch'}>
                 {noticias
                     .toSorted((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
                     .map((noticia, i) => {

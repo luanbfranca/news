@@ -21,10 +21,10 @@ export default function NoticiaPage() {
 
     return (
         <>
-            <Typography variant="h5" fontWeight="bold" gutterBottom component="div">
+            <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
                 {noticia?.title}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div" sx={{ color: 'text.secondary', mb: 2 }}>
+            <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
                 {noticia?.category} • {noticia?.date}
             </Typography>
             <CardMUI sx={{ borderRadius: '8px', height: '100%', mb: 3 }}>

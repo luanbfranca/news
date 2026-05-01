@@ -43,10 +43,10 @@ export default function NoticiasPage() {
             <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
                 {category ? `Notícias: ${category}` : 'Notícias'}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom component="div" sx={{ color: 'text.secondary', mb: 2 }}>
+            <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
                 {category ? `Mostrando notícias da categoria ${category}` : 'Navegue por todas as nossas publicações ou filtre por categoria'}
             </Typography>
-            <Grid container spacing={1} sx={{ mb: 3 }}>
+            <Grid container spacing={1} mb={3}>
                 {filters.map((filter, i) => {
                     return (
                         <Grid key={i}>
@@ -59,6 +59,7 @@ export default function NoticiasPage() {
                                     textTransform: 'none',
                                 }}
                                 disableElevation
+                                aria-label={filter}
                                 onClick={() => handleFilter(filter)}
                             >
                                 {filter}
@@ -67,7 +68,7 @@ export default function NoticiasPage() {
                     );
                 })}
             </Grid>
-            <Grid container spacing={3} sx={{ justifyContent: 'stretch' }}>
+            <Grid container spacing={3} justifyContent={'stretch'}>
                 {noticias
                     .filter((noticia) => {
                         return !category || noticia.category === category;
