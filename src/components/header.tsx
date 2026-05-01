@@ -16,7 +16,7 @@ import Menu from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { usePathname } from "next/navigation";
 import NextLink from '@/components/link';
-import Destaque from './destaque';
+import Highlights from './highlights';
 import { useMediaQuery } from '@mui/material';
 
 export default function Header() {
@@ -89,7 +89,7 @@ export default function Header() {
                     </Toolbar>
                 </AppBar>
                 {
-                    isMobile ? null : <Destaque/>
+                    isMobile ? null : <Highlights/>
                 }
             </div>
         </>

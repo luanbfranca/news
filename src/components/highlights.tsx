@@ -5,7 +5,7 @@ import NextLink from '@/components/link';
 import { useEffect, useState } from 'react';
 import { getDestaques } from '@/services/news.service';
 
-export default function Destaque() {
+export default function Highlights() {
 
     const [destaques, setDestaques] = useState<string[]>();
     useEffect(() => {
