@@ -17,7 +17,7 @@ export default function NoticiaPage() {
             setNoticia(await getNoticia(params.titulo));
         };
         fetchData();
-    }, []);
+    }, [params.titulo]);
 
     return (
         <>
