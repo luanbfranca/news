@@ -1,11 +1,11 @@
 export interface Noticia {
   slug: string,
   title: string,
-  excerpt: string,
+  excerpt?: string,
   content: string,
   imageUrl: string,
   imageAlt: string,
-  category: string,
-  date: string,
+  category?: string,
+  date?: string,
   section: string,
 }
