@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const defaultTheme = createTheme({
@@ -14,7 +14,7 @@ const defaultTheme = createTheme({
     typography: {
         fontSize: 14,
         // fontWeightRegular: 500
-    }
+    },
 });
 
 export default function ThemeWrapper({
@@ -22,9 +22,5 @@ export default function ThemeWrapper({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (
-        <ThemeProvider theme={defaultTheme}>
-            { children }
-        </ThemeProvider>
-    )
+    return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>;
 }

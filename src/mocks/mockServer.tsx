@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-export function StartMockWorker({children}: {children: React.ReactNode}) {
-  const [isMockReady, setMockReady] = useState(false);
+export function StartMockWorker({ children }: { children: React.ReactNode }) {
+    const [isMockReady, setMockReady] = useState(false);
 
     useEffect(() => {
         async function enableMocks() {
@@ -21,5 +21,5 @@ export function StartMockWorker({children}: {children: React.ReactNode}) {
         return <div>Loading mocks...</div>;
     }
 
-    return <>{children}</> ;
+    return <>{children}</>;
 }
