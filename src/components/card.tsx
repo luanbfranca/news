@@ -1,5 +1,5 @@
 import { Noticia } from '@/models/noticia';
-import { Stack, Typography } from '@mui/material';
+import { Skeleton, Stack, Typography } from '@mui/material';
 import CardMUI from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -15,7 +15,7 @@ export default function Card({
     contrast = false,
     small = false,
 }: Noticia & { fullMode?: boolean; contrast?: boolean; small?: boolean }) {
-    const content = (
+    const content = title ? (
         <CardContent className={contrast ? 'card-contrast' : ''} sx={{ width: '100%' }}>
             <Typography gutterBottom component="div" fontWeight={'bold'} textTransform={fullMode ? 'uppercase' : 'none'} color={contrast ? 'secondary.light' : 'secondary.main'}>
                 {category}
@@ -39,8 +39,8 @@ export default function Card({
                 {excerpt}
             </Typography>
         </CardContent>
-    );
-    return (
+    ) : null;
+    return content ? (
         <CardMUI sx={{ borderRadius: '8px', height: '100%' }}>
             <CardMedia sx={{ height: small ? 250 : fullMode ? 420 : 200 }} image={imageUrl} title={imageAlt}>
                 <Stack direction="row" spacing={1} alignItems={'flex-end'} height={'100%'}>
@@ -49,5 +49,5 @@ export default function Card({
             </CardMedia>
             {fullMode ? null : content}
         </CardMUI>
-    );
+    ) : <Skeleton variant="rounded" animation="wave" width={'100%'} height={small ? 250 : fullMode ? 420 : 200} />;
 }

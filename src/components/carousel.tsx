@@ -1,4 +1,4 @@
-import { IconButton, Stack } from '@mui/material';
+import { IconButton, Skeleton, Stack } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Noticia } from '@/models/noticia';
@@ -20,21 +20,25 @@ export default function Carousel({ noticias }: { noticias: Noticia[] }) {
     return (
         <>
             <Stack direction={'row'} spacing={2} maxWidth={'100%'} overflow={'hidden'} padding={'2px'} className={styles['card-fade']}>
-                {noticias.map((noticia, i) => {
-                    return (
-                        <div
-                            style={{
-                                transform: `translateX(-${currentIndex * 316}px)`,
-                            }}
-                            key={i}
-                            className={styles['card-min-width']}
-                        >
-                            <Link href={`/noticias/${noticia.slug}`}>
-                                <Card {...noticia} />
-                            </Link>
-                        </div>
-                    );
-                })}
+                {noticias[0]
+                    ? noticias.map((noticia, i) => {
+                          return (
+                              <div
+                                  style={{
+                                      transform: `translateX(-${currentIndex * 316}px)`,
+                                  }}
+                                  key={i}
+                                  className={styles['card-min-width']}
+                              >
+                                  <Link href={`/noticias/${noticia.slug}`}>
+                                      <Card {...noticia} />
+                                  </Link>
+                              </div>
+                          );
+                      })
+                    : Array.from({ length: 4 }, (_, i) => {
+                          return <Skeleton variant="rounded" animation="wave" width={300} height={400} key={i} className={styles['card-min-width']} />;
+                      })}
             </Stack>
             <Stack direction={'row'} justifyContent={'flex-end'} mt={1}>
                 <IconButton aria-label="voltar" onClick={prevCard}>

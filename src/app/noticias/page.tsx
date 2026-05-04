@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import { Grid, Typography, useMediaQuery } from '@mui/material';
+import { Grid, Skeleton, Typography, useMediaQuery } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import Card from '@/components/card';
@@ -47,41 +47,68 @@ export default function NoticiasPage() {
                 {category ? `Mostrando notícias da categoria ${category}` : 'Navegue por todas as nossas publicações ou filtre por categoria'}
             </Typography>
             <Grid container spacing={1} mb={3}>
-                {filters.map((filter, i) => {
-                    return (
-                        <Grid key={i}>
-                            <Button
-                                variant={filter === category ? 'contained' : 'outlined'}
-                                size="small"
-                                color={'secondary'}
-                                sx={{
-                                    borderRadius: '24px',
-                                    textTransform: 'none',
-                                }}
-                                disableElevation
-                                aria-label={filter}
-                                onClick={() => handleFilter(filter)}
-                            >
-                                {filter}
-                            </Button>
-                        </Grid>
-                    );
-                })}
+                {filters[0]
+                    ? filters.map((filter, i) => {
+                          return (
+                              <Grid key={i}>
+                                  <Button
+                                      variant={filter === category ? 'contained' : 'outlined'}
+                                      size="small"
+                                      color={'secondary'}
+                                      sx={{
+                                          borderRadius: '24px',
+                                          textTransform: 'none',
+                                      }}
+                                      disableElevation
+                                      aria-label={filter}
+                                      onClick={() => handleFilter(filter)}
+                                  >
+                                      {filter}
+                                  </Button>
+                              </Grid>
+                          );
+                      })
+                    : Array.from({ length: 7 }, (_, i) => {
+                          return (
+                              <Skeleton variant="rounded" animation="wave" key={i}>
+                                  <Button
+                                      variant={'outlined'}
+                                      size="small"
+                                      color={'secondary'}
+                                      sx={{
+                                          borderRadius: '24px',
+                                          textTransform: 'none',
+                                      }}
+                                      disableElevation
+                                  >
+                                      loading
+                                  </Button>
+                              </Skeleton>
+                          );
+                      })}
             </Grid>
             <Grid container spacing={3} justifyContent={'stretch'}>
-                {noticias
-                    .filter((noticia) => {
-                        return !category || noticia.category === category;
-                    })
-                    .map((noticia, i) => {
-                        return (
-                            <Grid size={isMobile ? 12 : 4} key={i}>
-                                <Link href={`/noticias/${noticia.slug}`}>
-                                    <Card {...noticia} />
-                                </Link>
-                            </Grid>
-                        );
-                    })}
+                {noticias[0]
+                    ? noticias
+                          .filter((noticia) => {
+                              return !category || noticia.category === category;
+                          })
+                          .map((noticia, i) => {
+                              return (
+                                  <Grid size={isMobile ? 12 : 4} key={i}>
+                                      <Link href={`/noticias/${noticia?.slug}`}>
+                                          <Card {...noticia} />
+                                      </Link>
+                                  </Grid>
+                              );
+                          })
+                    : Array.from({ length: 9 }, (_, i) => {
+                          return (
+                              <Grid size={isMobile ? 12 : 4} key={i}>
+                                  <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
+                              </Grid>
+                          );
+                      })}
             </Grid>
         </>
     );

@@ -1,7 +1,10 @@
-import { http, HttpResponse } from 'msw';
+import { delay, http, HttpResponse } from 'msw';
 import { CATEGORIAS_FILTRO, CATEGORIAS_NAV, NOTICIAS, TOPICOS_DESTAQUE } from './data-news';
 
 export const handlers = [
+    // http.all('*', async () => {
+    //     await delay(10000);
+    // }),
     http.get('https://api.news.com/categorias', () => {
         return HttpResponse.json(CATEGORIAS_NAV);
     }),
