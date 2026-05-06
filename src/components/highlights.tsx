@@ -19,7 +19,7 @@ export default function Highlights() {
             {destaques
                 ? destaques?.map((destaque, i) => {
                       return (
-                          <Button href="" component={NextLink} color="inherit" sx={{ fontWeight: 800 }} key={i}>
+                          <Button href={`/noticias?category=${destaque}`} component={NextLink} color="inherit" sx={{ fontWeight: 800 }} key={i}>
                               {destaque}
                           </Button>
                       );
@@ -27,7 +27,7 @@ export default function Highlights() {
                 : Array.from({ length: 5 }, (_, i) => {
                       return (
                           <Skeleton variant="rounded" animation="wave" key={i}>
-                              <Button href="" component={NextLink} color="inherit" sx={{ fontWeight: 800 }}>
+                              <Button href="#" component={NextLink} color="inherit" sx={{ fontWeight: 800 }}>
                                   loading text
                               </Button>
                           </Skeleton>

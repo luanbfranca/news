@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 import { Grid, Skeleton, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -10,7 +11,15 @@ import { getFiltro, getNoticias } from '@/services/news.service';
 import { Noticia } from '@/models/noticia';
 
 export default function NoticiasPage() {
+    const searchParams = useSearchParams();
+    const searchQuery = searchParams.get('category');
     const [category, setCategory] = useState<string>();
+
+    useEffect(() => {
+        if (searchQuery) {
+            setCategory(searchQuery);
+        }
+    }, [searchQuery]);
 
     const [filters, setFilters] = useState<string[]>([]);
     useEffect(() => {

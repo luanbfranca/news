@@ -3,7 +3,7 @@
 export const CATEGORIAS_NAV = [
   "Ao vivo",
   "Política",
-  "Money",
+  "Mercado",
   "Mundo",
   "Agro",
   "Infra",
@@ -17,7 +17,7 @@ export const CATEGORIAS_FILTRO = [
   "Tecnologia",
   "Política",
   "Esportes",
-  "Money",
+  "Mercado",
   "Mundo",
   "Agro",
   "Cultura",
@@ -159,7 +159,7 @@ export const NOTICIAS = [
     date: "2025-03-12",
     section: "geral",
   },
-  // —— Money ——
+  // —— Mercado ——
   {
     slug: "mercado-aneel-enel",
     title: "Eventual cassação da Enel não assusta investidores, diz Aneel",
@@ -168,9 +168,9 @@ export const NOTICIAS = [
     content: "Conteúdo completo sobre Aneel e Enel...",
     imageUrl: "https://picsum.photos/seed/energia/800/400",
     imageAlt: "Torres de transmissão de energia",
-    category: "Money",
+    category: "Mercado",
     date: "2025-03-14",
-    section: "money",
+    section: "Mercado",
   },
   {
     slug: "selic-bcb-decisao",
@@ -180,7 +180,7 @@ export const NOTICIAS = [
     content: "Conteúdo completo sobre decisão do Copom...",
     imageUrl: "https://picsum.photos/seed/selic/800/400",
     imageAlt: "Sede do Banco Central",
-    category: "Money",
+    category: "Mercado",
     date: "2025-03-13",
     section: "geral",
   },
@@ -192,7 +192,7 @@ export const NOTICIAS = [
     content: "Conteúdo completo sobre bolsa...",
     imageUrl: "https://picsum.photos/seed/bolsa/800/400",
     imageAlt: "Gráfico de índices da bolsa",
-    category: "Money",
+    category: "Mercado",
     date: "2025-03-12",
     section: "geral",
   },
