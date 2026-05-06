@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import { Grid, Skeleton, Typography, useMediaQuery } from '@mui/material';
+import { Grid, Skeleton, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import Card from '@/components/card';
@@ -10,8 +10,6 @@ import { getFiltro, getNoticias } from '@/services/news.service';
 import { Noticia } from '@/models/noticia';
 
 export default function NoticiasPage() {
-    const isMobile = useMediaQuery('(max-width:640px)');
-
     const [category, setCategory] = useState<string>();
 
     const [filters, setFilters] = useState<string[]>([]);
@@ -95,7 +93,7 @@ export default function NoticiasPage() {
                           })
                           .map((noticia, i) => {
                               return (
-                                  <Grid size={isMobile ? 12 : 4} key={i}>
+                                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
                                       <Link href={`/noticias/${noticia?.slug}`}>
                                           <Card {...noticia} />
                                       </Link>
@@ -104,7 +102,7 @@ export default function NoticiasPage() {
                           })
                     : Array.from({ length: 9 }, (_, i) => {
                           return (
-                              <Grid size={isMobile ? 12 : 4} key={i}>
+                              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
                                   <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
                               </Grid>
                           );

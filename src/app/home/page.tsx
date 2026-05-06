@@ -9,11 +9,9 @@ import Carousel from '@/components/carousel';
 import { Noticia } from '@/models/noticia';
 import { getNoticias } from '@/services/news.service';
 
-import { Grid, Skeleton, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Grid, Skeleton, Stack, Typography } from '@mui/material';
 
 export default function HomePage() {
-    const isMobile = useMediaQuery('(max-width:640px)');
-
     const [noticias, setNoticias] = useState<Noticia[]>([]);
     const [review, setReview] = useState<Noticia[]>([]);
     const [webstories, setWebstories] = useState<Noticia[]>([]);
@@ -43,13 +41,13 @@ export default function HomePage() {
             </Link>
 
             <Grid container spacing={2} justifyContent={'stretch'} mb={4} mt={4}>
-                <Grid size={isMobile ? 12 : 7}>
+                <Grid size={{ xs: 12, sm: 7 }}>
                     <Link href={`/noticias/${noticias[1]?.slug}`}>
                         <Card {...noticias[1]} date="" />
                     </Link>
                 </Grid>
 
-                <Grid size={isMobile ? 12 : 5}>
+                <Grid size={{ xs: 12, sm: 5 }}>
                     <Link href={`/noticias/${noticias[2]?.slug}`}>
                         <Card {...noticias[2]} date="" />
                     </Link>
@@ -65,7 +63,7 @@ export default function HomePage() {
                 {webstories[0]
                     ? webstories.map((noticia, i) => {
                           return (
-                              <Grid size={isMobile ? 6 : 2.3} key={i}>
+                              <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
                                   <Link href={`/noticias/${noticia?.slug}`}>
                                       <Card fullMode={true} contrast={true} small={true} {...noticia} />
                                   </Link>
@@ -74,7 +72,7 @@ export default function HomePage() {
                       })
                     : Array.from({ length: 3 }, (_, i) => {
                           return (
-                              <Grid size={isMobile ? 6 : 2.3} key={i}>
+                              <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
                                   <Skeleton variant="rounded" animation="wave" width={'100%'} height={250} />
                               </Grid>
                           );
@@ -103,7 +101,7 @@ export default function HomePage() {
                           .toSorted((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
                           .map((noticia, i) => {
                               return (
-                                  <Grid size={isMobile ? 12 : 4} key={i}>
+                                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
                                       <Link href={`/noticias/${noticia?.slug}`}>
                                           <Card {...noticia} />
                                       </Link>
@@ -112,7 +110,7 @@ export default function HomePage() {
                           })
                     : Array.from({ length: 9 }, (_, i) => {
                           return (
-                              <Grid size={isMobile ? 12 : 4} key={i}>
+                              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
                                   <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
                               </Grid>
                           );
