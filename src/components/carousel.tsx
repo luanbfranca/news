@@ -30,9 +30,11 @@ export default function Carousel({ noticias }: { noticias: Noticia[] }) {
                                   key={i}
                                   className={styles['card-min-width']}
                               >
-                                  <Link href={`/noticias/${noticia.slug}`}>
-                                      <Card {...noticia} />
-                                  </Link>
+                                  <article>
+                                      <Link href={`/noticias/${noticia.slug}`}>
+                                          <Card {...noticia} />
+                                      </Link>
+                                  </article>
                               </div>
                           );
                       })

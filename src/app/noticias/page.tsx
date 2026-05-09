@@ -47,76 +47,78 @@ export default function NoticiasPage() {
 
     return (
         <>
-            <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
-                {category ? `Notícias: ${category}` : 'Notícias'}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
-                {category ? `Mostrando notícias da categoria ${category}` : 'Navegue por todas as nossas publicações ou filtre por categoria'}
-            </Typography>
-            <Grid container spacing={1} mb={3}>
-                {filters[0]
-                    ? filters.map((filter, i) => {
-                          return (
-                              <Grid key={i}>
-                                  <Button
-                                      variant={filter === category ? 'contained' : 'outlined'}
-                                      size="small"
-                                      color={'secondary'}
-                                      sx={{
-                                          borderRadius: '24px',
-                                          textTransform: 'none',
-                                      }}
-                                      disableElevation
-                                      aria-label={filter}
-                                      onClick={() => handleFilter(filter)}
-                                  >
-                                      {filter}
-                                  </Button>
-                              </Grid>
-                          );
-                      })
-                    : Array.from({ length: 7 }, (_, i) => {
-                          return (
-                              <Skeleton variant="rounded" animation="wave" key={i}>
-                                  <Button
-                                      variant={'outlined'}
-                                      size="small"
-                                      color={'secondary'}
-                                      sx={{
-                                          borderRadius: '24px',
-                                          textTransform: 'none',
-                                      }}
-                                      disableElevation
-                                  >
-                                      loading
-                                  </Button>
-                              </Skeleton>
-                          );
-                      })}
-            </Grid>
-            <Grid container spacing={3} justifyContent={'stretch'}>
-                {noticias[0]
-                    ? noticias
-                          .filter((noticia) => {
-                              return !category || noticia.category === category;
-                          })
-                          .map((noticia, i) => {
-                              return (
-                                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
-                                      <Link href={`/noticias/${noticia?.slug}`}>
-                                          <Card {...noticia} />
-                                      </Link>
-                                  </Grid>
-                              );
-                          })
-                    : Array.from({ length: 9 }, (_, i) => {
-                          return (
-                              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
-                                  <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
-                              </Grid>
-                          );
-                      })}
-            </Grid>
+            <section>
+                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
+                    {category ? `Notícias: ${category}` : 'Notícias'}
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
+                    {category ? `Mostrando notícias da categoria ${category}` : 'Navegue por todas as nossas publicações ou filtre por categoria'}
+                </Typography>
+                <Grid container spacing={1} mb={3}>
+                    {filters[0]
+                        ? filters.map((filter, i) => {
+                            return (
+                                <Grid key={i}>
+                                    <Button
+                                        variant={filter === category ? 'contained' : 'outlined'}
+                                        size="small"
+                                        color={'secondary'}
+                                        sx={{
+                                            borderRadius: '24px',
+                                            textTransform: 'none',
+                                        }}
+                                        disableElevation
+                                        aria-label={filter}
+                                        onClick={() => handleFilter(filter)}
+                                    >
+                                        {filter}
+                                    </Button>
+                                </Grid>
+                            );
+                        })
+                        : Array.from({ length: 7 }, (_, i) => {
+                            return (
+                                <Skeleton variant="rounded" animation="wave" key={i}>
+                                    <Button
+                                        variant={'outlined'}
+                                        size="small"
+                                        color={'secondary'}
+                                        sx={{
+                                            borderRadius: '24px',
+                                            textTransform: 'none',
+                                        }}
+                                        disableElevation
+                                    >
+                                        loading
+                                    </Button>
+                                </Skeleton>
+                            );
+                        })}
+                </Grid>
+                <Grid container spacing={3} justifyContent={'stretch'}>
+                    {noticias[0]
+                        ? noticias
+                            .filter((noticia) => {
+                                return !category || noticia.category === category;
+                            })
+                            .map((noticia, i) => {
+                                return (
+                                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+                                        <Link href={`/noticias/${noticia?.slug}`}>
+                                            <Card {...noticia} />
+                                        </Link>
+                                    </Grid>
+                                );
+                            })
+                        : Array.from({ length: 9 }, (_, i) => {
+                            return (
+                                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+                                    <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
+                                </Grid>
+                            );
+                        })}
+                </Grid>
+            </section>
         </>
     );
 }
