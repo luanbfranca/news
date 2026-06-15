@@ -13,7 +13,7 @@ export default function ContatoPage() {
     return (
         <>
             <section>
-                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
+                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5" data-testid="titulo">
                     Contato
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
@@ -67,7 +67,7 @@ export default function ContatoPage() {
                             sx={{ '& .MuiOutlinedInput-root': { alignItems: 'flex-start' } }}
                         />
                         <div>
-                            <Button variant="contained" type="submit" color="secondary" sx={{ textTransform: 'none' }}>
+                            <Button variant="contained" type="submit" color="secondary" sx={{ textTransform: 'none' }} data-testid="submit">
                                 Enviar mensagem
                             </Button>
                         </div>

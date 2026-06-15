@@ -37,14 +37,14 @@ export default function HomePage() {
     return (
         <>
             <section>
-                <article>
+                <article data-testid="main-banner">
                     <Link href={`/noticias/${noticias[0]?.slug}`}>
                         <Card fullMode={true} contrast={true} {...noticias[0]} />
                     </Link>
                 </article>
             </section>
 
-            <section>
+            <section data-testid="secondary-banners">
                 <Grid container spacing={2} justifyContent={'stretch'} mb={4} mt={4}>
                     <Grid size={{ xs: 12, sm: 7 }}>
                         <article>
@@ -64,38 +64,38 @@ export default function HomePage() {
                 </Grid>
             </section>
 
-            <section>
+            <section data-testid="carousel">
                 <Carousel noticias={noticias.filter((noticia) => noticia.category === 'Tecnologia')} />
             </section>
 
-            <section>
+            <section data-testid="webstories">
                 <Typography variant="h6" fontWeight="bold" gutterBottom component="h6" color="secondary.main" textTransform="uppercase" mb={2}>
                     Webstories
                 </Typography>
                 <Grid container spacing={2} justifyContent={'stretch'}>
                     {webstories[0]
                         ? webstories.map((noticia, i) => {
-                            return (
-                                <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
-                                    <article>
-                                        <Link href={`/noticias/${noticia?.slug}`}>
-                                            <Card fullMode={true} contrast={true} small={true} {...noticia} />
-                                        </Link>
-                                    </article>
-                                </Grid>
-                            );
-                        })
+                              return (
+                                  <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
+                                      <article>
+                                          <Link href={`/noticias/${noticia?.slug}`}>
+                                              <Card fullMode={true} contrast={true} small={true} {...noticia} />
+                                          </Link>
+                                      </article>
+                                  </Grid>
+                              );
+                          })
                         : Array.from({ length: 3 }, (_, i) => {
-                            return (
-                                <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
-                                    <Skeleton variant="rounded" animation="wave" width={'100%'} height={250} />
-                                </Grid>
-                            );
-                        })}
+                              return (
+                                  <Grid size={{ xs: 6, sm: 4, md: 2.3 }} key={i}>
+                                      <Skeleton variant="rounded" animation="wave" width={'100%'} height={250} />
+                                  </Grid>
+                              );
+                          })}
                 </Grid>
             </section>
 
-            <section>
+            <section data-testid="review">
                 <Typography variant="h6" fontWeight="bold" gutterBottom component="h6" color="secondary.main" textTransform="uppercase" mb={2} mt={4}>
                     Review
                 </Typography>
@@ -113,33 +113,32 @@ export default function HomePage() {
                 </Stack>
             </section>
 
-            <section>
+            <section data-testid="latest-news">
                 <Typography variant="h6" fontWeight="bold" gutterBottom component="h6" color="secondary.main" textTransform="uppercase" mb={2} mt={4}>
                     Últimas notícias
                 </Typography>
                 <Grid container spacing={3} justifyContent={'stretch'}>
-                    {' '}
                     {noticias[0]
                         ? noticias
-                            .toSorted((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
-                            .map((noticia, i) => {
-                                return (
-                                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
-                                        <article>
-                                            <Link href={`/noticias/${noticia?.slug}`}>
-                                                <Card {...noticia} />
-                                            </Link>
-                                        </article>
-                                    </Grid>
-                                );
-                            })
+                              .toSorted((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+                              .map((noticia, i) => {
+                                  return (
+                                      <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+                                          <article>
+                                              <Link href={`/noticias/${noticia?.slug}`}>
+                                                  <Card {...noticia} />
+                                              </Link>
+                                          </article>
+                                      </Grid>
+                                  );
+                              })
                         : Array.from({ length: 9 }, (_, i) => {
-                            return (
-                                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
-                                    <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
-                                </Grid>
-                            );
-                        })}
+                              return (
+                                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+                                      <Skeleton variant="rounded" animation="wave" width={'100%'} height={400} />
+                                  </Grid>
+                              );
+                          })}
                 </Grid>
             </section>
         </>
