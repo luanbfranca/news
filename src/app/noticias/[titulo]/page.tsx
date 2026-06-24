@@ -21,7 +21,7 @@ export default function NoticiaPage() {
     return (
         <>
             <section>
-                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
+                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5" data-testid="titulo">
                     {noticia ? noticia?.title : <Skeleton variant="rounded" animation="wave" />}
                 </Typography>
                 <article>

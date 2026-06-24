@@ -6,7 +6,7 @@ export default function FaqPage() {
     return (
         <>
             <section>
-                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5">
+                <Typography variant="h5" fontWeight="bold" gutterBottom component="h5" data-testid="titulo">
                     FAQ
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom component="p" color="text.secondary" mb={2}>
